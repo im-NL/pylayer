@@ -1,7 +1,7 @@
 from googleapiclient.discovery import build 
 from datetime import datetime
 
-api_key = 'AIzaSyDZviY4Ef4ND_gSTIEFDBkClueiiq5ILQo'
+api_key = 'secret'
 youtube = build('youtube', 'v3', developerKey=api_key)
 
 def get_link(query):
