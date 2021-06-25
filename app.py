@@ -122,8 +122,18 @@ def gplay(args):
         for i in range(len(tracks)-1):
             link = mygoogle.get_link_one(tracks[i-1])
             print(link)
-            queue.append([link])
+            queue.append(link)
         print(queue)
+    
+    elif args.startswith('https://open.spotify.com/track'):
+        songname = spotify.get_name(args)
+        try:
+            links = mygoogle.get_link_one(songname)
+        except:
+            links = scraper.get_link_one(songname)
+        finally:
+            queue.append(links)
+
     elif args.startswith('https://youtube'):
         queue.append(args) 
 
@@ -235,6 +245,9 @@ while True:
                 driver.find_element_by_tag_name('body').send_keys('j') 
         except:
             pass
+
+    if init == 'help':
+        print('please read commands.txt for a list of all commands or use link "https://github.com/im-NL/pylayer/blob/master/commands.txt"')
 
     if init == 'm':
         driver.find_element_by_tag_name('body').send_keys('m') 
