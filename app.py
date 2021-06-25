@@ -8,6 +8,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from pytube.__main__ import YouTube
 import spotify
@@ -173,14 +174,17 @@ while True:
         except:
             pass
 
-    if init.startswith('vd'):
-        for i in range(int(init[3:])):
-            driver.find_element_by_tag_name('body').send_keys(Keys.ARROW_DOWN)
+    if init.startswith('voldn'):
+        action = ActionChains(driver)
+        slider = driver.find_element_by_class_name('ytp-volume-slider')
+        for i in range(int(init[6:])):
+            action.click_and_hold(slider).move_by_offset(-5, 0).release().perform()
 
-    if init.startswith('vd'):
-        for i in range(int(init[3:])):
-            driver.find_element_by_tag_name('body').send_keys(Keys.ARROW_UP)
-
+    if init.startswith('volup'):
+        action = ActionChains(driver)
+        slider = driver.find_element_by_class_name('ytp-volume-slider')
+        for i in range(int(init[6:])):
+            action.click_and_hold(slider).move_by_offset(5, 0).release().perform()
 
     if init.startswith('rewind'):
         try:
