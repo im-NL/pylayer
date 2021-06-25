@@ -1,4 +1,4 @@
-#### USE AFTER API REQUESTS FOR THE DAY HAVE BEEN EXCEEDED 
+#### MAKE SURE YOU HAVE GONE THROUGH README.MD   
 global skipped
 
 
@@ -39,7 +39,7 @@ options.binary_location = browser_path
 
 print('------------ INITIALISING, PLEASE WAIT ------------')
 
-driver_path = r'.\chromedriver.exe'
+driver_path = r'.\setup\chromedriver.exe'                                   # go through README.md 
 driver = webdriver.Chrome(executable_path=driver_path, options=options)
 driver.set_window_position(-1000, 100)
 
@@ -235,9 +235,9 @@ while True:
                 driver.find_element_by_tag_name('body').send_keys('j') 
         except:
             pass
-    
-    if init == 'test':                                                              ## COMMAND MADE FOR TESTING 
-        gplay('https://open.spotify.com/playlist/6oV6I85XPUZCQC8dCmdOEn')
-    
+
+    if init == 'm':
+        driver.find_element_by_tag_name('body').send_keys('m') 
+        
     else:
         pass
