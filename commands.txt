@@ -4,15 +4,15 @@ ALL COMMANDS PRESENT IN PYPLAYER FIRST RELEASE:
 Let's you queue any song/spotify playlist you want.
 You can queue these via a link or even by name.
 
-'q' command variations:
+'q' command variations:     # NOT ADDED YET 
     jq: this command means 'just queue' and will queue whatever the top hit is for that search term 
 
 2) p [arguments]
     Let's you play any song/spotify playlist you want.
     If a song is already playing, then the song will be added to queue instead.
 
-'p' command variations:
-    jq: this command means 'just queue' and will play whatever the top hit is for that search term. 
+'p' command variations:     # NOT ADDED YET 
+    jp: this command means 'just play' and will play whatever the top hit is for that search term. 
     if another song is already playing, that song will be stopped and the song you mentioned here will start playing
 
 3) queue
