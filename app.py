@@ -2,7 +2,7 @@
 global skipped
 
 
-# IMPORTS 
+# IMPORTS ---------------------
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
@@ -20,9 +20,9 @@ import threading
 
 #------------------------------
 
-#-----
+#-------------
 brave_path = r'C:\Program Files (x86)\Slimjet\slimjet.exe'
-#-----
+#-------------
 
 #------------------------------------------------------------------
 options = webdriver.ChromeOptions()
