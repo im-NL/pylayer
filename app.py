@@ -48,12 +48,11 @@ queue = []
 def queueplayer():
     global np
     global skipped
-    print('queue called')
     if threading.active_count() == 2:
         a = input('press b to break and anything else to continue ')
         if a == 'b':
             return
-    print('for song in queeue')
+            
     for song in queue:
         print('sonngname', ' ', song)
         skipped = False
