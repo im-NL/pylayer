@@ -11,6 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from pytube.__main__ import YouTube
+import mygoogle
 import spotify
 import scraper
 import sys 
@@ -29,7 +30,7 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 options.add_argument("--disable-blink-features=AutomationControlled")
 options.add_argument('--log-level=3')
-options.add_argument("window-size=1400,600")
+options.add_argument("window-size=400,600")
 options.add_argument('--disable-logging')
 
 options.binary_location = brave_path
@@ -64,9 +65,16 @@ def queueplayer():
             time.sleep(0.1)
         print(f'old queue= {queue}')
         for i in queue:
-            if i[1] == song[1]:
-                queue.remove(i)
-                break
+            try:
+                if i[1] == song[1]:
+                    queue.remove(i)
+                    break
+            except:
+                if i == song:
+                    queue.remove(i)
+                    break
+            finally:
+                print('skipped')
         print(f'new queue = {queue}')
         queueplayer()
     print('queue over, playing radio by default . . . .') 
@@ -102,6 +110,40 @@ def play(args):
         if threading.active_count()<2:
             x = threading.Thread(target=queueplayer)
             x.start()                   
+
+
+def gplay(args):
+    print('called')
+    if args.startswith('https://open.spotify.com/playlist'):
+        tracks = spotify.get_playlist_tracks(args)
+        print(tracks)
+        for i in range(len(tracks)-1):
+            link = mygoogle.get_link_one(tracks[i-1])
+            print(link)
+            queue.append([link])
+        print(queue)
+    elif args.startswith('https://youtube'):
+        queue.append(args) 
+
+
+    elif args == 'q':
+        return
+
+    else:
+        player = scraper.get_link(args)
+        for i in range(len(player)):
+            print(player[i][2])
+        print('----\nwhich song do you want to play? \n----')
+        try:
+            answer = int(input('-> '))
+        except:
+            return
+        queue.append(player[answer-1])
+        
+        if threading.active_count()<2:
+            x = threading.Thread(target=queueplayer)
+            x.start()          
+
 
 while True:
     init = input('$ ')
@@ -191,5 +233,9 @@ while True:
                 driver.find_element_by_tag_name('body').send_keys('j') 
         except:
             pass
+    
+    if init == 'test':
+        gplay('https://open.spotify.com/playlist/6oV6I85XPUZCQC8dCmdOEn')
+    
     else:
         pass
