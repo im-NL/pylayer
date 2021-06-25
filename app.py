@@ -21,7 +21,7 @@ import threading
 #------------------------------
 
 #-------------
-brave_path = r'C:\Program Files (x86)\Slimjet\slimjet.exe'
+browser_path = r'C:\Program Files (x86)\Slimjet\slimjet.exe'
 #-------------
 
 #------------------------------------------------------------------
@@ -33,13 +33,13 @@ options.add_argument('--log-level=3')
 options.add_argument("window-size=400,600")
 options.add_argument('--disable-logging')
 
-options.binary_location = brave_path
+options.binary_location = browser_path
 
 #-------------------------------------------------------------------
 
 print('------------ INITIALISING, PLEASE WAIT ------------')
 
-driver_path = r'C:\Users\adush\Downloads\chromedriver_win32\chromedriver.exe'
+driver_path = r'.\chromedriver.exe'
 driver = webdriver.Chrome(executable_path=driver_path, options=options)
 driver.set_window_position(-1000, 100)
 
@@ -50,7 +50,7 @@ def queueplayer():
     global np
     global skipped
     if threading.active_count() == 2:
-        a = input('press b to break and anything else to continue ')
+        a = input('press b to break and anything else to continue: ')
         if a == 'b':
             return
             
