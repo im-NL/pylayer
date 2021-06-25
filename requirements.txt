@@ -1,0 +1,6 @@
+pytube
+six
+spotipy
+urllib3
+selenium
+google-api-python-client

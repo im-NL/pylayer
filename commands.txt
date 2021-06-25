@@ -1,0 +1,54 @@
+ALL COMMANDS PRESENT IN PYPLAYER FIRST RELEASE:
+
+1) q [arguments]
+Let's you queue any song/spotify playlist you want.
+You can queue these via a link or even by name.
+
+'q' command variations:
+    jq: this command means 'just queue' and will queue whatever the top hit is for that search term 
+
+2) p [arguments]
+    Let's you play any song/spotify playlist you want.
+    If a song is already playing, then the song will be added to queue instead.
+
+'p' command variations:
+    jq: this command means 'just queue' and will play whatever the top hit is for that search term. 
+    if another song is already playing, that song will be stopped and the song you mentioned here will start playing
+
+3) queue
+    Let's you see the current queue. 
+    NOTE: If you have added songs to queue and want to play them, use this command to view the queue,
+          if you are prompted by whether or not you wanna break the queue, then just press enter and you songs 
+          will start playing.
+
+4) clear
+    clears queue
+
+5) hidevideo / showvideo:
+    Let's you hide/show the video of the song that is currently playing.
+
+6) skip
+    skips the current song
+
+'skip' variations:
+    'rskip': using this command will make it so that the next song in the *radio* will play. 
+    Note that the queue and radio are different things.
+
+7) quit
+    Quits all operations and finishes program.
+
+WHILE LISTENING COMMANDS:
+
+    i) seek [argument]: the argument has to be one integer and using seek will seek the video by  (the number you have given * 10) seconds
+
+    ii) rewind [argument]: the argument has to be one integer and using rewind will rewind the video by  (the number you have given * 10) seconds
+
+    iii) p: pauses/plays the current song
+
+    iv) volup [argument]: increases the volume by the number you have given in arguments      ##### THIS IS A BETA COMMAND 
+
+    v) voldn [argument]: increases the volume by the number you have given in arguments      ##### THIS IS A BETA COMMAND 
+
+    vi) m: mutes the song
+
+    vii) np: tells you the song that is currently playing 
