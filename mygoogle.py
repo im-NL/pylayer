@@ -1,7 +1,7 @@
 from googleapiclient.discovery import build 
 from datetime import datetime
 
-api_key = 'AIzaSyDZviY4Ef4ND_gSTIEFDBkClueiiq5ILQo'
+api_key = 'secret'
 youtube = build('youtube', 'v3', developerKey=api_key)
 
 def get_link(query):
@@ -20,7 +20,7 @@ def get_link_one(query):
     req = youtube.search().list(q=query, type='video', part='snippet')
     results = req.execute()
     link = 'https://youtube.com/watch?v=' + results['items'][0]['id']['videoId']
-    return link 
+    return [link] 
 
 def song_length(url):
     req = youtube.search().list(q=url, type='video', part='snippet')
