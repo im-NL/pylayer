@@ -24,8 +24,8 @@ before starting, I suggest you pip install the libraries in requirements.txt
 1) You will need a google and spotify api key as I cannot provide mine. The process to get these keys is relatively 
 straightforward. A spotify api key is **needed** while the google api key is optional. You can refer to these videos 
 for reference on how to get those keys. 
-Spotify:
-Google: 
+Spotify: 'https://developer.spotify.com/dashboard/login' <==== it is quite straightfoward you have to log in and create an application then use it's api keys
+Google: 'https://www.youtube.com/watch?v=N18czV5tj5o' <===== Guide on how to get google key (not made by me)
 (You will need to put these key values into spotify.py and mygoogle.py yourself)
 
 2) Please run the 'sjtwebsetup_x86.exe' file in the setup folder. This will be the browser we are going to be using 
