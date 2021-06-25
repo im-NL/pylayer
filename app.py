@@ -75,7 +75,9 @@ def queueplayer():
                     break
             finally:
                 print('skipped')
-        print(f'new queue = {queue}')
+        print('new queue: ')
+        for song in queue:
+            print(song)
         queueplayer()
     print('queue over, playing radio by default . . . .') 
 
@@ -234,7 +236,7 @@ while True:
         except:
             pass
     
-    if init == 'test':
+    if init == 'test':                                                              ## COMMAND MADE FOR TESTING 
         gplay('https://open.spotify.com/playlist/6oV6I85XPUZCQC8dCmdOEn')
     
     else:
