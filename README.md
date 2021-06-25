@@ -1,10 +1,14 @@
 # pylayer
+
 Still working on the name but this is an app that can play whatever songs you like, for free.
 
 There will be no ads and you can play songs by name, queue entire playlists, queue spotify links, 
 queue YouTube links and much more. 
 
+View all commands in commands.txt 
+OR
 Type 'help' in the terminal while running the script to get a list of full commands.
+
 Please comment any issues at 'https://github.com/im-NL/pylayer/issues' and I will try my best to 
 resolve them :)
 
@@ -39,3 +43,6 @@ end there too.
 *please note that this application is still under development and most features you suggest can be added*
 
 You can mail me at aryan@teamcodetech.in for any suggestions. 
+
+* you may get an ad on the first song you play, i can't quite figure out why, but they won't play otherwise
+* if they do, please tell me.
